@@ -1,10 +1,10 @@
 #pragma once
-#include "Static_Evaluator.h"
+#include "Material_Evaluator.h"
 class Positional_Evaluator :
-    public Static_Evaluator
+    public Material_Evaluator
 {
 public:
-    Positional_Evaluator(double n) :Static_Evaluator{ n } {}
-    virtual double operator()(const Board& b) const override;
+    Positional_Evaluator(double w=1, double b=0) :Material_Evaluator{ w, b } {}
+    virtual double operator()(const Board&) const override;
 };
 

@@ -4,7 +4,7 @@
 #include <iterator>
 Board::Board() : col{true}
 {
-
+	
 	for (int i = 0; i < 10; ++i)
 	{
 		//Assigning the sentinels the value 7
@@ -21,14 +21,16 @@ Board::Board() : col{true}
 		//Filling the white pieces
 		data[6][i] = data[7][i + 1] = data[8][i] = 1;
 	}
+	normalize();
 }
 
 Board::positions Board::generate() const
 {
-	std::list<Board> res=generate_moves();
-	//TODO use generate_captures
 
-	return res;
+	auto captures = generate_captures();
+	if (captures.empty())
+		return generate_moves();
+	return captures;
 }
 
 
@@ -36,7 +38,7 @@ Board::positions Board::generate() const
 Board::positions Board::generate_moves() const
 {
 	positions res;
-	int nx = col ? 1 : -1;//to find appropRiate pawns
+	int nx = col ? 1 : -1;//to find appropriate pawns
 	for (int i{ 1 }; i < 9; ++i)
 	{
 		for (int j{ 1 }; j < 9; ++j)
@@ -54,6 +56,7 @@ Board::positions Board::generate_moves() const
 					temp.data[i][j] = 0;
 					temp.col = !col;
 					temp.last_move = convert(i, j, row, col1);
+					temp.normalize();
 					res.push_back(temp);
 				}
 				if (data[row][col2] == 0)
@@ -64,6 +67,7 @@ Board::positions Board::generate_moves() const
 					temp.data[i][j] = 0;
 					temp.col = !col;
 					temp.last_move = convert(i, j, row, col2);
+					temp.normalize();
 					res.push_back(temp);
 				}
 
@@ -76,9 +80,9 @@ Board::positions Board::generate_moves() const
 
 Board::positions Board::generate_captures() const
 {
-	//TODO
-	//integraTe and use jump()
+	
 	positions res;
+	auto it = std::back_inserter(res);
 	int nx = col ? 1 : -1;//my pawn
 	int en = (nx == 1) ? -1 : 1;//enemy pawn
 	for (int i{ 1 }; i < 9; ++i)
@@ -97,6 +101,8 @@ Board::positions Board::generate_captures() const
 						if (data[row - 1][col1 - 1] == 0)
 						{
 							//jump from [i,j] to [row-1, col1-1]
+							auto alfa=jump(i, j, row - 1, col1 - 1, row, col1, data);
+							std::copy(alfa.begin(), alfa.end(), it);
 						}
 					}
 					else
@@ -104,6 +110,8 @@ Board::positions Board::generate_captures() const
 						if (data[row + 1][col1 - 1] == 0)
 						{
 							//jump from [i,j] to [row+1, col1-1]
+							auto alfa=jump(i, j, row + 1, col1 - 1, row, col1, data);
+							std::copy(alfa.begin(), alfa.end(), it);
 						}
 					}
 					
@@ -117,6 +125,8 @@ Board::positions Board::generate_captures() const
 						if (data[row - 1][col2 + 1] == 0)
 						{
 							//jump from [i,j] to [row-1, col2+1]
+							auto alfa=jump(i, j, row - 1, col2+1, row, col2, data);
+							std::copy(alfa.begin(), alfa.end(), it);
 						}
 					}
 					else
@@ -124,6 +134,8 @@ Board::positions Board::generate_captures() const
 						if (data[row + 1][col2 + 1] == 0)
 						{
 							//jump from [i,j] to [row+1, col2+1]
+							auto alfa=jump(i, j, row + 1, col2 + 1, row, col2, data);
+							std::copy(alfa.begin(), alfa.end(), it);
 						}
 					}
 
@@ -136,8 +148,7 @@ Board::positions Board::generate_captures() const
 
 Board::positions Board::jump(int i, int j, int a, int b, int en1, int en2, std::vector<std::vector<int>> temp) const
 {
-	//TODO
-	//debug
+	
 	positions res;
 	auto it = std::back_inserter(res);
 	int en = temp[en1][en2];
@@ -200,13 +211,14 @@ Board::positions Board::jump(int i, int j, int a, int b, int en1, int en2, std::
 			newest.data = temp;
 			newest.col = !col;
 			newest.last_move = convert(i, j, a, b);
+			newest.normalize();
 			res.push_back(newest);
 		}
 
 	return res;
 }
 
-Board::mov Board::convert(int a, int b, int c, int d)//converting matrix coordinates to checKers notation
+Board::mov Board::convert(int a, int b, int c, int d)//converting matrix coordinates to checkers notation
 {
 	int x = (a - 1) * 4 + b / 2;
 	int y= (c - 1) * 4 + d / 2;
@@ -227,7 +239,7 @@ std::ostream& operator<<(std::ostream& os, const Board& b)
 			if (temp == -1)
 				os << "b ";
 			if (temp == 0)
-				os << "_ ";
+				os << ". ";
 		}
 		os << std::endl;
 	}
@@ -260,4 +272,21 @@ std::vector<std::vector<int>> Board::getBoard() const//returning the board witho
 		}
 	}
 	return temp;
+}
+
+void Board::normalize()
+{
+	int nx = col ? 1 : -1;
+	int z = -1;
+	for (int i{ 1 }; i <= 8; ++i)
+	{
+		int j{ 1 };
+		if (i % 2 == 1)++j;
+		for (; j <= 8; j+=2)
+		{
+			++z;
+			if (data[i][j] == nx)
+				table[z] = 1;
+		}
+	}
 }
