@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\AdvancedPositionalEvaluator">
+      <UniqueIdentifier>{e28b7f25-03fb-461b-b54b-88835f0480fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BalanceEvaluator">
+      <UniqueIdentifier>{8f4a51d5-fed4-4dc9-b499-698030434234}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BalanceEvaluator">
+      <UniqueIdentifier>{1375bf3b-de7e-4ea4-913a-d50cd5be83a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AdvancedPositionalEvaluator">
+      <UniqueIdentifier>{6a831b08-4fb9-4943-a8a7-5f33e48922be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Board">
+      <UniqueIdentifier>{ed8c7da3-1fb4-4119-bdaa-98eecb52f860}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Board">
+      <UniqueIdentifier>{8546a4a2-4180-4738-ac3c-4ef0b6045db8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CentralityEvaluator">
+      <UniqueIdentifier>{df4e35dc-be05-4b11-943f-3dfdd0a1f67b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CentralityEvaluator">
+      <UniqueIdentifier>{d1570794-4f92-4208-b916-6e215551658e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Estimator">
+      <UniqueIdentifier>{329658ed-45d6-4472-ac10-13a299362600}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Estimator">
+      <UniqueIdentifier>{5efe3aaa-3aa6-4630-9d13-dc2c06171ce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{4835062d-0dda-4f6e-beec-a8581c36b962}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{07c7eff2-1b69-436f-9b9a-3b0dc9382357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MaterialEvaluator">
+      <UniqueIdentifier>{a1986740-64de-4ba3-96ec-55f59ceb53f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MaterialEvaluator">
+      <UniqueIdentifier>{0a6f0fce-0979-4731-9b31-681d0538edaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MobilityEvaluator">
+      <UniqueIdentifier>{48c31f98-65f1-42d0-ac17-96b435223bc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MobilityEvaluator">
+      <UniqueIdentifier>{487c4e06-36b9-435d-9824-a6b4269c7542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\PositionalEvaluator">
+      <UniqueIdentifier>{5e5a51df-a8e9-4acb-8701-ee6979a7965f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PositionalEvaluator">
+      <UniqueIdentifier>{d7674d7f-fd51-43e7-9a2d-a346099fd501}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\RankEvaluator">
+      <UniqueIdentifier>{109bb4ae-78e5-42d9-9a4a-946813752b04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RankEvaluator">
+      <UniqueIdentifier>{cacc752a-1640-43e8-9350-9d92142a842e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\StaticEvaluator">
+      <UniqueIdentifier>{e6d3ba79-1b2d-49a3-8520-ee0a5a149db8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\StaticEvaluator">
+      <UniqueIdentifier>{44f9c93b-5614-4f39-ac9a-1c3ab1e0a27a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdvancedPositionalEvaluator\Advanced_Positional_Evaluator.h">
+      <Filter>Header Files\AdvancedPositionalEvaluator</Filter>
+    </ClInclude>
+    <ClInclude Include="BalanceEvaluator\Balance_Evaluator.h">
+      <Filter>Header Files\BalanceEvaluator</Filter>
+    </ClInclude>
+    <ClInclude Include="Board\Board.h">
+      <Filter>Header Files\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="CentralityEvaluator\Centrality_Evaluator.h">
+      <Filter>Header Files\CentralityEvaluator</Filter>
+    </ClInclude>
+    <ClInclude Include="Estimator\Estimator.h">
+      <Filter>Header Files\Estimator</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Game.h">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialEvaluator\Material_Evaluator.h">
+      <Filter>Header Files\MaterialEvaluator</Filter>
+    </ClInclude>
+    <ClInclude Include="MobilityEvaluator\Mobility_Evaluator.h">
+      <Filter>Header Files\MobilityEvaluator</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticEvaluator\Static_Evaluator.h">
+      <Filter>Header Files\StaticEvaluator</Filter>
+    </ClInclude>
+    <ClInclude Include="RankEvaluator\Rank_Evaluator.h">
+      <Filter>Header Files\RankEvaluator</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionalEvaluator\Positional_Evaluator.h">
+      <Filter>Header Files\PositionalEvaluator</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AdvancedPositionalEvaluator\Advanced_Positional_Evaluator.cpp">
+      <Filter>Source Files\AdvancedPositionalEvaluator</Filter>
+    </ClCompile>
+    <ClCompile Include="BalanceEvaluator\Balance_Evaluator.cpp">
+      <Filter>Source Files\BalanceEvaluator</Filter>
+    </ClCompile>
+    <ClCompile Include="Board\Board.cpp">
+      <Filter>Source Files\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="CentralityEvaluator\Centrality_Evaluator.cpp">
+      <Filter>Source Files\CentralityEvaluator</Filter>
+    </ClCompile>
+    <ClCompile Include="Estimator\Estimator.cpp">
+      <Filter>Source Files\Estimator</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Game.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialEvaluator\Material_Evaluator.cpp">
+      <Filter>Source Files\MaterialEvaluator</Filter>
+    </ClCompile>
+    <ClCompile Include="MobilityEvaluator\Mobility_Evaluator.cpp">
+      <Filter>Source Files\MobilityEvaluator</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticEvaluator\Static_Evaluator.cpp">
+      <Filter>Source Files\StaticEvaluator</Filter>
+    </ClCompile>
+    <ClCompile Include="RankEvaluator\Rank_Evaluator.cpp">
+      <Filter>Source Files\RankEvaluator</Filter>
+    </ClCompile>
+    <ClCompile Include="PositionalEvaluator\Positional_Evaluator.cpp">
+      <Filter>Source Files\PositionalEvaluator</Filter>
+    </ClCompile>
+    <ClCompile Include="Checkers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
